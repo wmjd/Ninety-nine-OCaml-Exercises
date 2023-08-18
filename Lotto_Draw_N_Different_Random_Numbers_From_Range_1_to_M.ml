@@ -20,10 +20,9 @@ a |> b |> c = (a |> b) |> c
 
 Thus, 
 	n |> rand_select @@ range 1 m = 
+	n |> rand_select @@ (range 1) m = 
 	n |> rand_select @@ (range 1) m) =
-	n |> rand_select @@ (range 1 m)) =
 	n |> (rand_select @@ ((range 1) m) = 
-	n |> (rand_select @@ ((range 1) m)) = 
 	n |> (rand_select((range 1) m) =
 	rand_select((range 1) m) n
 Q.E.D *)
