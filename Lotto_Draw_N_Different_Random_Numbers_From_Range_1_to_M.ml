@@ -20,15 +20,16 @@ a @@ b @@ c = a @@ (b @@ c)
 LEFT ASSOCIATIVE
 a |> b |> c = (a |> b) |> c
 
-Thus, 
-	n |> rand_select @@ range 1 m = 
-	n |> rand_select @@ (range 1) m = 
-	n |> rand_select @@ ((range 1) m) =
-	n |> (rand_select @@ ((range 1) m)) = 
-	n |> (rand_select((range 1) m)) =
+Thus,
+	rand_select(range 1 m) n =
+	rand_select((range 1) m) n =
 	(rand_select((range 1) m)) n =
-	rand_select((range 1) m) n
-Q.E.D 
+	n |> (rand_select((range 1) m)) =
+	n |> (rand_select @@ ((range 1) m)) =
+	n |> rand_select @@ ((range 1) m) =
+	n |> rand_select @@ (range 1) m = 
+	n |> rand_select @@ range 1 m =
+Q.E.D.
 
 *)
 
