@@ -5,7 +5,9 @@
 
 let lotto_select n m = rand_select (range 1 m) n 
 	
-(* Out of curiousity, I wanted to find an equivalent way of writing this expression that doesn't use any parentheses. OCaml apparently has operators for application and reverse application with certain associativity and precedence. I put this chart together and I think it is correct:
+(*
+
+Out of curiousity, I wanted to find an equivalent way of writing this expression that doesn't use any parentheses. OCaml apparently has operators for application and reverse application with certain associativity and precedence. I put this chart together and I think it is correct:
 
 In order of precedence: 
 
@@ -21,9 +23,12 @@ a |> b |> c = (a |> b) |> c
 Thus, 
 	n |> rand_select @@ range 1 m = 
 	n |> rand_select @@ (range 1) m = 
-	n |> rand_select @@ (range 1) m) =
-	n |> (rand_select @@ ((range 1) m) = 
-	n |> (rand_select((range 1) m) =
+	n |> rand_select @@ ((range 1) m) =
+	n |> (rand_select @@ ((range 1) m)) = 
+	n |> (rand_select((range 1) m)) =
+	(rand_select((range 1) m)) n =
 	rand_select((range 1) m) n
-Q.E.D *)
+Q.E.D 
+
+*)
 
