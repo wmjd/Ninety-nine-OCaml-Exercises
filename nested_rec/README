@@ -1,0 +1,14 @@
+This is a dir for exploratory programming with nested recursion.
+The motivation for this is my travail in type checking a nested recursive function. I was trying to convert a regular double recursion into a nested double recursion i.e. roughly transforming 
+
+let rec foo =
+	...
+	foo <args> <op> foo <args>
+
+to
+
+let rec bar =
+	...
+	(bar bar <ags>)   
+
+
